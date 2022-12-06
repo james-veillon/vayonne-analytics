@@ -1,0 +1,10 @@
+/* misc */
+.smallcaps { font-variant: small-caps; }
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.p-footer { margin-bottom: 0; }
+.w3-bar-block .w3-bar-item { padding: 20px; }
+.body { font-family: Verdana, sans-serif; }
+
+a { color:blue; }
+a:hover { background-color:lightgray }

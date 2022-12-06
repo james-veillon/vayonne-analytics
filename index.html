@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- With thanks to w3schools.com -->
+
+<head>
+  <title>Vayonne Analytics LLC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/w3.css">
+  <link rel="stylesheet" href="./css/head.css">
+</head>
+
+<body id="body" class="smallcaps" onresize="setMenu()"
+  onload="showDiv('charts');addBorder('chartsBttn');setMenu();">
+
+  <!-- header (sticky) -->
+  <div class="w3-row w3-black">
+    <div class="w3-container w3-left w3-padding-16" style="width:160px">
+      <img src="./img/va-logo.png" onclick="showDiv('charts');addBorder('chartsBttn')">
+    </div>
+    <div class="w3-container w3-rest">
+      <!-- header2 text is filled by setMenu() in body.js -->
+      <p id="header1" class="w3-xlarge bold">Vayonne Analytics</p>
+      <b><p id="header2" class="w3-pale-yellow w3-text-indigo"><b></b></p></b>
+      <div class="w3-bar w3-container" id="bttn-menu" style="padding: 0px">
+        <button id="chartsBttn" class="menuBttn w3-bar-item w3-button"
+          onclick="showDiv('charts');addBorder('chartsBttn')">Charts</button>
+        <button id="servicesBttn" class="menuBttn w3-bar-item w3-button"
+          onclick="showDiv('services');addBorder('servicesBttn');splashscreen()">Services</button>
+        <button id="connectBttn" class="menuBttn w3-bar-item w3-button"
+          onclick="showDiv('connect');addBorder('connectBttn')">Connect</button>
+        <button id="legalBttn" class="menuBttn w3-bar-item w3-button"
+          onclick="showDiv('legal');addBorder('legalBttn')">Legal</button>
+      </div>
+      <!-- only visible on small screens -->
+      <div id="icon-menu" class="w3-container" style="display: none; padding: 0px">
+        <button class="w3-button w3-border" onclick="w3_open()">Menu ☰</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar (hidden by default) -->
+  <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-animate-left"
+    style="display:none;z-index:2;width:20%;min-width:200px" id="side-menu">
+    <span onclick="w3_close()" class="w3-button w3-bar-item w3-xlarge">&times;</span>
+    <span onclick="w3_close();showDiv('charts');addBorder('chartsBttn')"
+      class="w3-bar-item w3-button w3-large">Charts</span>
+    <span onclick="w3_close();showDiv('services');addBorder('servicesBttn');splashscreen()"
+      class="w3-bar-item w3-button w3-large">Services</span>
+    <span onclick="w3_close();showDiv('connect');addBorder('connectBttn')"
+      class="w3-bar-item w3-button w3-large">Connect</span>
+    <span onclick="w3_close();showDiv('legal');addBorder('legalBttn')"
+      class="w3-bar-item w3-button w3-large">Legal</span>
+  </nav>
+
+  <!-- charts -->
+  <div id="charts" class="content w3-content w3-padding" style="max-width:800px;background-color:w3-grey">
+    <div class="w3-xlarge w3-text-indigo w3-center w3-padding-16 w3-pale-yellow">
+        <b><p>Free Training &</p></b>
+        <b><p>Guaranteed Trading Signals!</p></b>
+    </div>
+    <img class="w3-image w3-border" src="./img/00-INTRO.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/01-AAPL.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/02-IBM-01.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/03-IBM-02.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/04-IBM-03.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/05-NDX.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/06-TSLA.png" style="width:100%">
+    <hr />
+    <img class="w3-image w3-border" src="./img/07-ES.png" style="width:100%">
+    <hr />
+    <p class="w3-large w3-text-indigo bold">Summary</p>
+    <p class="w3-large">Vayonne Analytics researches and develops market timing systems  
+       based on tools called "KeyConstants".</p>
+    <p class="w3-large">There are several KeyConstant tools, and they are designed to be used together. 
+        When used correctly, they provide excellent leading indicators.</p>
+    <p class="w3-large">Once "tuned" for each market, they do not need to be changed.
+       The settings that worked this year also worked last year, and can be expected to work in the future.</p>
+    <p class="w3-large">To learn more, please visit the 
+      <button onclick="window.scrollTo(0,0);showDiv('services');addBorder('servicesBttn');splashscreen()"
+      class="w3-large w3-btn w3-blue w3-round w3-padding-small">Services</button> page.</p>
+    <hr />
+  </div>
+
+  <!-- services - descriptions & downloads -->
+  <div id="services" class="content w3-content w3-padding" style="max-width:800px;background-color:w3-grey">
+    <div class="w3-row">
+      <div class="w3-container w3-twothird">
+        <p class="w3-text-indigo w3-large"><b>Free Webinar</b></p>
+        <p>This weekly group training explains the basic KeyConstant tools, applied to various stocks,
+          commodities and Forex. This isn't a beginner's course for new traders -- it's a free opportunity 
+          to learn if these tools are a good fit for your trading style.</p>
+      </div>
+      <div class="w3-container w3-third">
+        <p><button class="w3-round">FreeWebinar.pdf</button></p>
+        <p><button class="w3-round">Register</button></p>
+      </div>
+    </div>
+     <div class="w3-row">
+      <div class="w3-container w3-twothird">
+        <p class="w3-text-indigo w3-large"><b>Guaranteed Trading Signals</b></p>
+        <p>This service is offered to active traders who don't want to watch the markets all day. 
+          All clients receive Buy/Sell signals with suggested Stop and Target levels in Forex markets 
+          (equity index, commodity and Treasury futures coming soon).</p>
+      </div>
+      <div class="w3-container w3-third">
+        <p><button class="w3-round">TradingSignals.pdf</button></p>
+        <p><button class="w3-round">Reserve</button></p>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-container w3-twothird">
+        <p class="w3-text-indigo w3-large"><b>Private Training</b></p>
+        <p>This online training builds on the Free Webinar by applying the tools 
+          to the markets you trade, over a series of 5 sessions.</p>
+      </div>
+      <div class="w3-container w3-third">
+        <p><button class="w3-round">PrivateTraining.pdf</button></p>
+        <p><button class="w3-round">Reserve</button></p>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-container w3-twothird">
+        <p class="w3-text-indigo w3-large"><b>Custom Analysis</b></p>
+        <p>This service extends the Guaranteed Trading Signals service by providing 
+          signals for markets you select. Note: This service is limited to 12 clients per year.
+        </p>
+      </div>
+      <div class="w3-container w3-third">
+        <p><button class="w3-round">CustomAnalysis.pdf</button></p>
+        <p><button class="w3-round">Reserve</button></p>
+      </div>
+    </div>
+    <hr />
+  </div>
+
+  <!-- connect -->
+  <div id="connect" class="content w3-content w3-padding" style="max-width:100%" onclick="w3_close();">
+    <div class="w3-row-padding">
+      <div class="w3-third w3-padding-large">
+        <p class="w3-large w3-text-indigo bold">About</p>
+        <p>My name is James Veillon ("vayonne"). I have been researching, investing and speculating 
+          (primarily with futures) since 1986.</p>
+        <p>Previously, this site was Vayonne.net and taught "HarmonicAngles" (a subset of KeyConstants). The
+          original training videos have been replaced with Private Training and Custom Analysis.</p>
+      </div>
+      <div class="w3-third w3-padding-large">
+        <p class="w3-large w3-text-indigo bold">Connect</p>
+        <p>Thank you for visiting Vayonne Analytics.</p>
+        <p>For information not covered in the downloads, or just to say how much you dislike the "small caps" font
+          style, please:</p>
+        <p><a href="mailto:questions@vayonneanalytics.com?Subject=KeyConstants" target="_top">Send email</a></p>
+        <p><a href="https://www.linkedin.com/in/JamesVeillon" target="_blank">Connect on LinkedIn</a></p>
+      </div>
+      <div class=" w3-third w3-padding-large">
+        <p class="w3-large w3-text-indigo bold">Downloads (Q1 2023)</p>
+        <p><button class="w3-round">FreeWebinar.pdf</button></p>
+        <p><button class="w3-round">TradingSignals.pdf</button></p>
+        <p><button class="w3-round">PrivateTraining.pdf</button></p>
+        <p><button class="w3-round">CustomAnalysis.pdf</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- legal -->
+  <div id="legal" class="content w3-content w3-padding" style="max-width:800px;background-color:w3-grey">
+        <p class="w3-large w3-text-indigo bold">Legal Disclosure</p>
+        <p>Vayonne Analytics LLC ("The Company") and this website ("VayonneAnalytics.com", "this site", collectively
+          "we", "our", "us") inform you that:
+        </p>
+        <p>Charting, including the use of technical analysis tools and strategies, have investing risks imbedded
+          in them. As a result, whenever you utilize the information on this site, including the Basic or Custom Signals
+          services, please keep the following points in mind:
+          <ul>
+            <li>The use of futures or options have high investment risk, meaning there is both substantial
+              opportunity for profit and loss</li><br>
+            <ul>
+              <li>You acknowledge that you are aware of these risks and accept them</li><br>
+              <li>We encourage you not to invest assets you cannot afford to lose</li><br>
+            </ul>
+            <li class="bold">The Company and this site utilize data and market information obtained from
+              companies that provide this information, however, we cannot confirm the accuracy of this information
+              (although we believe it is reliable)</li>
+            <br>
+            <li class="bold">The services and this site are provided solely to allow a potential investor /
+              speculator to learn how to apply the information provided to actual market data</li><br>
+            <li>This site does not contain any performance data or information on accounts managed by the Company; all
+              market data is provided solely to assist readers or users of our website and services in the
+              application of what they learn </li>
+            <br>
+            <li>The Company is neither a registered investment adviser nor a commodity trading adviser; it is, however,
+              a researcher and publisher of information it believes is beneficial to investors or speculators sharing a
+              belief in technical analysis tools and strategies in making investment decisions </li><br>
+            <ul>
+              <li>Neither this site nor the services provided by the Company are solicitations or offers to buy
+                or sell futures or options.</li><br>
+            </ul>
+          </ul>
+  </div>
+
+  <!-- footer (sticky) -->
+  <p class="p-footer w3-container w3-black w3-small w3-center w3-bottom">
+    &copy; 2022 Vayonne Analytics, LLC. All Rights Reserved.
+  </p>
+
+  <!-- splashscreen / under consstruction -->
+  <div id="splashscreen" class="w3-modal w3-center">
+    <div class="w3-modal-content w3-sand">
+      <div class="w3-container w3-large">
+        <p>Thank you for visiting VayonneAnalytics.com.</p>
+        <p>Downloads and Services will be available Q1 2023.</p>
+      </div>
+      <footer class="w3-container">
+        <p><button class="w3-btn w3-blue w3-round"
+            onclick="document.getElementById('splashscreen').style.display='none'">Continue</button></p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- javascript helper functions -->
+  <script src="./js/body.js"></script>
+
+</body>
+</html>
